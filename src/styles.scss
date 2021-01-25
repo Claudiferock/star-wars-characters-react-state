@@ -110,7 +110,7 @@ input[type='submit'] {
     text-align: center;
     color: $color-yellow;
     &.header {
-      padding: 0;
+      padding: .5em 0;
       font-size: 4em;
       animation: .6s animation-header ease-out; 
     }
@@ -135,21 +135,19 @@ input[type='submit'] {
   padding: 1.4em 2em;
   flex: 2;
   width: 100%;
-  height: 60%;
+  height: 55%;
   color: $color-green;
   text-decoration: none;
   border: 1px solid $color-green;
+  animation: 1500ms animation-glitch;
+
   .CharacterDetails {
     padding: .6em;
   }
 }
 
-.glitched {
-  animation: 1500ms animation-glitch;
-}
-
 .CharacterList {
-  height: 65%;
+  height: 55%;
   visibility: collapse;
   overflow:hidden;
   overflow-y:scroll;
@@ -161,7 +159,7 @@ input[type='submit'] {
   }
   &::-webkit-scrollbar-thumb {
     background-color: $color-green;
-    height: 60%;
+    height: 55%;
     border: .01em solid $font-color;
   }
 }
@@ -214,6 +212,8 @@ input[type='submit'] {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  top: 10;
   padding: 5em;
   margin: 2em;
   border: 2px solid red;

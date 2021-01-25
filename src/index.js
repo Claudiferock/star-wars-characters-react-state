@@ -46,8 +46,7 @@ const fetchCharacters = (dispatch) => {
     .then(response => dispatch({ type: 'RESPONSE_COMPLETE', payload: {characters: response.results} 
       }),
     )
-    //.then(response => dispatch({ type: 'RESPONSE_COMPLETE', payload: {characters: response.results} }))
-  .catch(error => dispatch({ type: 'ERROR', payload: { error }}));
+    .catch(error => dispatch({ type: 'ERROR', payload: { error }}));
   return document.querySelector(".CharacterList").classList.add("visible");
 }
 
@@ -64,7 +63,6 @@ const useThunkReducer = (reducer, initialState) => {
 
   const enhancedDispatch = React.useCallback(
     action => {
-      console.log(action);
 
       if (typeof(action) === 'function') {
         action(dispatch);
@@ -99,7 +97,7 @@ const Application = () => {
             state.loading ? <h1 className="loading"><span role="img" aria-label="galaxy emoji">🌌</span> Loading...</h1>
             :<CharacterList characters={characters} />
             }
-            {state.error && <div className="error"><p>Opps! something went wrong... a "{state.error.name}" has occured</p></div>}
+            {state.error && <div className="error"><p><span role="img" aria-label="constipated emoji">😖</span> Opps! something went wrong... a "{state.error.name}" has occured</p></div>}
           </section>
           <section className="CharacterView">
             <Route path="/characters/:id" component={CharacterView}/>
